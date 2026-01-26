@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donskyblock - Offical Site</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: #16161a;
+      color: #f5f5f7;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 500px;
+      margin: 4em auto;
+      background: #222127;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #0008;
+      padding: 2.5em 2em 2em 2em;
+      text-align: center;
+    }
+    .pfp {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 20px #ef233c55;
+      margin-bottom: 1.5em;
+      border: 2px solid #ef233c;
+    }
+    h1 {
+      margin-bottom: 0.25em;
+      font-size: 2.3em;
+      font-weight: bold;
+      letter-spacing: .05em;
+      color: #ef233c;
+      text-shadow: 0 1px 8px #ef233c30;
+    }
+    .bio {
+      color: #b0b0b6;
+      margin-bottom: 2em;
+      font-size: 1.07em;
+    }
+    .section-title {
+      margin-top: 2.5em;
+      margin-bottom: 0.7em;
+      font-size: 1em;
+      color: #ef233c;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      border-bottom: 1.5px solid #ef233c30;
+      padding-bottom: 0.35em;
+      width:80%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    ul.links, ul.projects {
+      list-style: none;
+      padding: 0;
+      margin: 1.2em 0;
+      width: 100%;
+    }
+    .links li, .projects li  {
+      margin: 0.7em 0;
+      width: 100%;
+    }
+    .custom-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #18171d;
+      border: 1.5px solid #2a2a33;
+      border-radius: 9px;
+      padding: 1em 1.3em;
+      color: #f5f5f7;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      position: relative;
+    }
+    .custom-link:hover {
+      background: #2e2631;
+      border-color: #ef233c;
+      color: #ef233c;
+      text-decoration: none;
+      box-shadow: 0 2px 16px #ef233c20;
+    }
+    .custom-link .link-label {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .custom-link .icon {
+      width: 1.3em;
+      height: 1.3em;
+      margin-right: 0.3em;
+      fill: #ef233c;
+      opacity: 0.9;
+    }
+    .project-desc {
+      font-size: 0.93em;
+      color: #b8b8c5;
+      margin-left: 2.3em;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding: 1em 0.5em 1em 0.5em;
+      }
+      .custom-link {
+        font-size: 0.98em;
+        padding: 0.85em 0.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="pfp" src="pfp.gif" alt="Profile Picture">
+    <h1>Donskyblock</h1>
+    <div class="bio">
+      <p>Hi there i'm a developer, I am currently doing freelance work and a couple open source projects [as seen below]. I primarily code in Rust , KT and python. But i also can work with JS , Typescript, Java and Go. [also html + Css but like obv]</p>
+    </div>
+
+    <div class="section-title">Channels & Links</div>
+    <ul class="links">
+      <li>
+        <a class="custom-link" href="https://github.com/donskyblock" target="_blank">
+          <span class="link-label">
+            <img class="icon" src="./github.svg" alt="GitHub" />
+            GitHub
+          </span>
+          <span>&rarr;</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="custom-link" href="https://twitch.tv/donsbyt" target="_blank">
+          <span class="link-label">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M10.94 2C6.03 2 2 6.03 2 10.94c0 5.37 4.54 9.78 9.93 9.78h.14c5.4 0 9.93-4.41 9.93-9.78C22 6.03 17.97 2 13.06 2h-2.12zm0 1.5h2.12c4.11 0 7.44 3.28 7.44 7.44 0 4.17-3.33 7.44-7.44 7.44h-.14C6.71 18.38 3.38 15.11 3.38 10.94c0-4.16 3.33-7.44 7.44-7.44zM8 8.5v4.99l4.3-2.5L8 8.5z"></path>
+            </svg>
+            Twitch
+          </span>
+          <span>&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="custom-link" href="https://www.youtube.com/@DonVFXAnime" target="_blank">
+          <span class="link-label">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M10.94 2C6.03 2 2 6.03 2 10.94c0 5.37 4.54 9.78 9.93 9.78h.14c5.4 0 9.93-4.41 9.93-9.78C22 6.03 17.97 2 13.06 2h-2.12zm0 1.5h2.12c4.11 0 7.44 3.28 7.44 7.44 0 4.17-3.33 7.44-7.44 7.44h-.14C6.71 18.38 3.38 15.11 3.38 10.94c0-4.16 3.33-7.44 7.44-7.44zM8 8.5v4.99l4.3-2.5L8 8.5z"></path>
+            </svg>
+            Youtube
+          </span>
+          <span>&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="custom-link" href="mailto:don@donskyblock.xyz">
+          <span class="link-label">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 7l8-5H4l8 5zm8 2l-8 5-8-5V6.36l8 4.89 8-4.89V13z"></path>
+            </svg>
+            Email
+          </span>
+          <span>&rarr;</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="section-title">Projects</div>
+    <ul class="links projects">
+      <li>
+        <a class="custom-link" href="https://github.com/donskyblock/DawnClient" target="_blank">
+          <span class="link-label">DawnClient</span>
+          <span>&rarr;</span>
+        </a>
+        <span class="project-description">A simple 1.21.10 Hypixel Skyblock Client , coded in rust + KT.</span>
+      </li>
+      <li>
+        <a class="custom-link" href="https://github.com/donskyblock/VtubeStudio" target="_blank">
+          <span class="link-label">Rust VTube Studio</span>
+          <span>&rarr;</span>
+        </a>
+        <span class="project-description">A nice linux compatible, VTUBE studio client, made in rust.</span>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
