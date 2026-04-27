@@ -6,18 +6,18 @@
   <title>Donskyblock - Official Site</title>
   <style>
     :root {
-      --bg: #07070d;
-      --bg-2: #0f0f1a;
-      --panel: #121222;
-      --panel-2: #181829;
-      --text: #ece9ff;
-      --muted: #aba4cc;
-      --line: #2c2443;
+      --bg: #020202;
+      --bg-2: #050506;
+      --panel: #0b0b0d;
+      --panel-2: #101013;
+      --text: #f1f1f4;
+      --muted: #9a9aa4;
+      --line: #1f1f24;
       --purple: #6f48ff;
-      --purple-soft: rgba(111, 72, 255, 0.24);
+      --purple-soft: rgba(111, 72, 255, 0.18);
       --red: #a61d3b;
-      --red-soft: rgba(166, 29, 59, 0.25);
-      --shadow: 0 24px 60px rgba(0, 0, 0, 0.46);
+      --red-soft: rgba(166, 29, 59, 0.16);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.62);
     }
 
     * {
@@ -28,10 +28,7 @@
       margin: 0;
       font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(55vw 55vw at 2% 0%, var(--purple-soft), transparent 70%),
-        radial-gradient(55vw 55vw at 100% 15%, var(--red-soft), transparent 75%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
+      background: #000000;
       padding: 28px 18px 56px;
       line-height: 1.45;
     }
@@ -50,7 +47,7 @@
       top: 20px;
       border-radius: 20px;
       border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(111, 72, 255, 0.12), rgba(16, 12, 25, 0.8) 36%), var(--panel);
+      background: linear-gradient(180deg, rgba(111, 72, 255, 0.08), rgba(5, 5, 7, 0.95) 32%), var(--panel);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
@@ -63,7 +60,7 @@
       width: 88px;
       height: 88px;
       border-radius: 14px;
-      border: 2px solid rgba(111, 72, 255, 0.7);
+      border: 2px solid rgba(111, 72, 255, 0.5);
       object-fit: cover;
       box-shadow: 0 10px 20px rgba(111, 72, 255, 0.35);
     }
@@ -82,7 +79,7 @@
 
     .bio {
       margin: 14px 0 0;
-      color: #cfc7f4;
+      color: #b7b7c2;
       font-size: 0.93rem;
     }
 
@@ -99,9 +96,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #f1edff;
+      color: #f0f0f3;
       border: 1px solid var(--line);
-      background: rgba(10, 10, 18, 0.52);
+      background: rgba(5, 5, 6, 0.88);
       border-radius: 12px;
       padding: 10px 12px;
       font-weight: 600;
@@ -110,8 +107,8 @@
 
     .link-card:hover {
       transform: translateY(-2px);
-      border-color: rgba(111, 72, 255, 0.95);
-      background: rgba(111, 72, 255, 0.14);
+      border-color: rgba(111, 72, 255, 0.8);
+      background: linear-gradient(90deg, rgba(111, 72, 255, 0.14), rgba(166, 29, 59, 0.14));
       color: white;
     }
 
@@ -126,12 +123,12 @@
       height: 1.1rem;
       fill: currentColor;
       opacity: 0.92;
-      color: #bb9bff;
+      color: #a887ff;
       flex: 0 0 auto;
     }
 
     .arrow {
-      color: #d8cffd;
+      color: #c7c7cd;
       opacity: 0.7;
     }
 
@@ -151,7 +148,7 @@
     .section-card {
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), var(--panel-2);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0)), var(--panel-2);
       box-shadow: var(--shadow);
       padding: 22px 20px;
       opacity: 0;
@@ -173,7 +170,7 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #bfb4ea;
+      color: #a6a0bc;
       font-weight: 700;
     }
 
@@ -184,7 +181,7 @@
 
     .section-copy {
       margin: 10px 0 0;
-      color: #cfc7f4;
+      color: #b9b9c5;
       max-width: 65ch;
     }
 
@@ -197,18 +194,18 @@
     .project-item {
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: rgba(11, 10, 18, 0.6);
+      background: rgba(9, 9, 11, 0.86);
       padding: 12px 14px;
     }
 
     .project-item a {
-      color: #f1edff;
+      color: #f0f0f4;
       text-decoration: none;
       font-weight: 650;
     }
 
     .project-item a:hover {
-      color: #ceb9ff;
+      color: #c7abff;
     }
 
     .project-description {
@@ -225,9 +222,9 @@
     }
 
     .skill-chip {
-      border: 1px solid #46326f;
-      background: rgba(23, 15, 35, 0.82);
-      color: #d9cffc;
+      border: 1px solid #2d243f;
+      background: rgba(11, 10, 15, 0.95);
+      color: #d4c8ff;
       border-radius: 999px;
       padding: 8px 13px;
       font-size: 0.86rem;
@@ -241,15 +238,15 @@
     }
 
     .skill-chip.active {
-      background: linear-gradient(130deg, rgba(111, 72, 255, 0.25), rgba(166, 29, 59, 0.26));
-      border-color: #8c68ff;
+      background: linear-gradient(130deg, rgba(111, 72, 255, 0.22), rgba(166, 29, 59, 0.22));
+      border-color: #7e5cff;
       color: #f5f2ff;
     }
 
     .skill-panel {
       margin-top: 12px;
-      border: 1px solid #4c2b4f;
-      background: linear-gradient(160deg, rgba(111, 72, 255, 0.14), rgba(166, 29, 59, 0.18));
+      border: 1px solid #32223c;
+      background: linear-gradient(160deg, rgba(111, 72, 255, 0.1), rgba(166, 29, 59, 0.12));
       border-radius: 14px;
       padding: 13px 14px;
     }
@@ -261,7 +258,7 @@
 
     .skill-note {
       margin: 6px 0 0;
-      color: #d7cef9;
+      color: #cec4ee;
       font-size: 0.92rem;
     }
 
@@ -275,11 +272,11 @@
     }
 
     .stack-list li {
-      border: 1px solid #3d2e62;
-      background: rgba(18, 12, 29, 0.7);
+      border: 1px solid #2d2a38;
+      background: rgba(12, 12, 14, 0.9);
       border-radius: 10px;
       padding: 7px 10px;
-      color: #d4caf7;
+      color: #bbb6d3;
       font-size: 0.83rem;
     }
 
