@@ -3,194 +3,530 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Donskyblock - Offical Site</title>
+  <title>Donskyblock - Official Site</title>
   <style>
+    :root {
+      --bg: #07070d;
+      --bg-2: #0f0f1a;
+      --panel: #121222;
+      --panel-2: #181829;
+      --text: #ece9ff;
+      --muted: #aba4cc;
+      --line: #2c2443;
+      --purple: #6f48ff;
+      --purple-soft: rgba(111, 72, 255, 0.24);
+      --red: #a61d3b;
+      --red-soft: rgba(166, 29, 59, 0.25);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.46);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      background: #16161a;
-      color: #f5f5f7;
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(55vw 55vw at 2% 0%, var(--purple-soft), transparent 70%),
+        radial-gradient(55vw 55vw at 100% 15%, var(--red-soft), transparent 75%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      padding: 28px 18px 56px;
+      line-height: 1.45;
     }
-    .container {
-      max-width: 500px;
-      margin: 4em auto;
-      background: #222127;
-      border-radius: 18px;
-      box-shadow: 0 4px 32px #0008;
-      padding: 2.5em 2em 2em 2em;
-      text-align: center;
+
+    .site {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
     }
+
+    .left-rail {
+      position: sticky;
+      top: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(111, 72, 255, 0.12), rgba(16, 12, 25, 0.8) 36%), var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-wrap {
+      padding: 26px 22px 16px;
+    }
+
     .pfp {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+      width: 88px;
+      height: 88px;
+      border-radius: 14px;
+      border: 2px solid rgba(111, 72, 255, 0.7);
       object-fit: cover;
-      box-shadow: 0 4px 20px #ef233c55;
-      margin-bottom: 1.5em;
-      border: 2px solid #ef233c;
+      box-shadow: 0 10px 20px rgba(111, 72, 255, 0.35);
     }
+
     h1 {
-      margin-bottom: 0.25em;
-      font-size: 2.3em;
-      font-weight: bold;
-      letter-spacing: .05em;
-      color: #ef233c;
-      text-shadow: 0 1px 8px #ef233c30;
+      margin: 14px 0 4px;
+      font-size: 2rem;
+      line-height: 1.06;
     }
+
+    .tagline {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
     .bio {
-      color: #b0b0b6;
-      margin-bottom: 2em;
-      font-size: 1.07em;
+      margin: 14px 0 0;
+      color: #cfc7f4;
+      font-size: 0.93rem;
     }
-    .section-title {
-      margin-top: 2.5em;
-      margin-bottom: 0.7em;
-      font-size: 1em;
-      color: #ef233c;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      border-bottom: 1.5px solid #ef233c30;
-      padding-bottom: 0.35em;
-      width:80%;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    ul.links, ul.projects {
+
+    .left-links {
       list-style: none;
+      margin: 18px 0 0;
       padding: 0;
-      margin: 1.2em 0;
-      width: 100%;
+      display: grid;
+      gap: 9px;
     }
-    .links li, .projects li  {
-      margin: 0.7em 0;
-      width: 100%;
-    }
-    .custom-link {
+
+    .link-card {
+      text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #18171d;
-      border: 1.5px solid #2a2a33;
-      border-radius: 9px;
-      padding: 1em 1.3em;
-      color: #f5f5f7;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1em;
-      transition: background 0.18s, color 0.18s, border 0.18s;
-      position: relative;
+      color: #f1edff;
+      border: 1px solid var(--line);
+      background: rgba(10, 10, 18, 0.52);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 600;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, color 0.16s ease;
     }
-    .custom-link:hover {
-      background: #2e2631;
-      border-color: #ef233c;
-      color: #ef233c;
-      text-decoration: none;
-      box-shadow: 0 2px 16px #ef233c20;
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(111, 72, 255, 0.95);
+      background: rgba(111, 72, 255, 0.14);
+      color: white;
     }
-    .custom-link .link-label {
+
+    .left-label {
       display: flex;
       align-items: center;
-      gap: 0.7em;
+      gap: 9px;
     }
-    .custom-link .icon {
-      width: 1.3em;
-      height: 1.3em;
-      margin-right: 0.3em;
-      fill: #ef233c;
-      opacity: 0.9;
+
+    .icon {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: currentColor;
+      opacity: 0.92;
+      color: #bb9bff;
+      flex: 0 0 auto;
     }
-    .project-desc {
-      font-size: 0.93em;
-      color: #b8b8c5;
-      margin-left: 2.3em;
-      text-align: left;
+
+    .arrow {
+      color: #d8cffd;
+      opacity: 0.7;
     }
-    @media (max-width: 640px) {
-      .container {
-        padding: 1em 0.5em 1em 0.5em;
+
+    .left-footer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .content {
+      display: grid;
+      gap: 14px;
+    }
+
+    .section-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)), var(--panel-2);
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+      opacity: 0;
+      transform: translateY(26px) scale(0.985);
+      transition: opacity 0.55s ease, transform 0.55s ease, border-color 0.25s ease;
+    }
+
+    .section-card.in-view {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .section-card:hover {
+      border-color: rgba(111, 72, 255, 0.7);
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #bfb4ea;
+      font-weight: 700;
+    }
+
+    .section-heading {
+      margin: 0;
+      font-size: clamp(1.28rem, 2.8vw, 1.7rem);
+    }
+
+    .section-copy {
+      margin: 10px 0 0;
+      color: #cfc7f4;
+      max-width: 65ch;
+    }
+
+    .project-grid {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(11, 10, 18, 0.6);
+      padding: 12px 14px;
+    }
+
+    .project-item a {
+      color: #f1edff;
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .project-item a:hover {
+      color: #ceb9ff;
+    }
+
+    .project-description {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .skill-selector {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-chip {
+      border: 1px solid #46326f;
+      background: rgba(23, 15, 35, 0.82);
+      color: #d9cffc;
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+    }
+
+    .skill-chip:hover {
+      transform: translateY(-1px);
+      border-color: #7f5eff;
+    }
+
+    .skill-chip.active {
+      background: linear-gradient(130deg, rgba(111, 72, 255, 0.25), rgba(166, 29, 59, 0.26));
+      border-color: #8c68ff;
+      color: #f5f2ff;
+    }
+
+    .skill-panel {
+      margin-top: 12px;
+      border: 1px solid #4c2b4f;
+      background: linear-gradient(160deg, rgba(111, 72, 255, 0.14), rgba(166, 29, 59, 0.18));
+      border-radius: 14px;
+      padding: 13px 14px;
+    }
+
+    .skill-panel strong {
+      color: #f8f5ff;
+      font-size: 1.03rem;
+    }
+
+    .skill-note {
+      margin: 6px 0 0;
+      color: #d7cef9;
+      font-size: 0.92rem;
+    }
+
+    .stack-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .stack-list li {
+      border: 1px solid #3d2e62;
+      background: rgba(18, 12, 29, 0.7);
+      border-radius: 10px;
+      padding: 7px 10px;
+      color: #d4caf7;
+      font-size: 0.83rem;
+    }
+
+    .site-footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: right;
+      opacity: 0.88;
+    }
+
+    .progress-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 8;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6f48ff, #a61d3b);
+      transition: width 0.13s linear;
+    }
+
+    @media (max-width: 980px) {
+      .site {
+        grid-template-columns: 1fr;
       }
-      .custom-link {
-        font-size: 0.98em;
-        padding: 0.85em 0.8em;
+
+      .left-rail {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 16px 12px 42px;
+      }
+
+      .profile-wrap,
+      .section-card {
+        padding: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img class="pfp" src="pfp.gif" alt="Profile Picture">
-    <h1>Donskyblock</h1>
-    <div class="bio">
-      <p>Hi there i'm a developer, I am currently doing freelance work and a couple open source projects [as seen below]. I primarily code in Rust , KT and python. But i also can work with JS , Typescript, Java and Go. [also html + Css but like obv]</p>
-    </div>
-
-    <div class="section-title">Channels & Links</div>
-    <ul class="links">
-      <li>
-        <a class="custom-link" href="https://github.com/donskyblock" target="_blank">
-          <span class="link-label">
-            <img class="icon" src="./github.svg" alt="GitHub" />
-            GitHub
-          </span>
-          <span>&rarr;</span>
-        </a>
-      </li>
-
-      <li>
-        <a class="custom-link" href="https://twitch.tv/donsbyt" target="_blank">
-          <span class="link-label">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path d="M10.94 2C6.03 2 2 6.03 2 10.94c0 5.37 4.54 9.78 9.93 9.78h.14c5.4 0 9.93-4.41 9.93-9.78C22 6.03 17.97 2 13.06 2h-2.12zm0 1.5h2.12c4.11 0 7.44 3.28 7.44 7.44 0 4.17-3.33 7.44-7.44 7.44h-.14C6.71 18.38 3.38 15.11 3.38 10.94c0-4.16 3.33-7.44 7.44-7.44zM8 8.5v4.99l4.3-2.5L8 8.5z"></path>
-            </svg>
-            Twitch
-          </span>
-          <span>&rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a class="custom-link" href="https://www.youtube.com/@DonVFXAnime" target="_blank">
-          <span class="link-label">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path d="M10.94 2C6.03 2 2 6.03 2 10.94c0 5.37 4.54 9.78 9.93 9.78h.14c5.4 0 9.93-4.41 9.93-9.78C22 6.03 17.97 2 13.06 2h-2.12zm0 1.5h2.12c4.11 0 7.44 3.28 7.44 7.44 0 4.17-3.33 7.44-7.44 7.44h-.14C6.71 18.38 3.38 15.11 3.38 10.94c0-4.16 3.33-7.44 7.44-7.44zM8 8.5v4.99l4.3-2.5L8 8.5z"></path>
-            </svg>
-            Youtube
-          </span>
-          <span>&rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a class="custom-link" href="mailto:don@donskyblock.xyz">
-          <span class="link-label">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm8 7l8-5H4l8 5zm8 2l-8 5-8-5V6.36l8 4.89 8-4.89V13z"></path>
-            </svg>
-            Email
-          </span>
-          <span>&rarr;</span>
-        </a>
-      </li>
-    </ul>
-
-    <div class="section-title">Projects</div>
-    <ul class="links projects">
-      <li>
-        <a class="custom-link" href="https://github.com/donskyblock/DawnClient" target="_blank">
-          <span class="link-label">DawnClient</span>
-          <span>&rarr;</span>
-        </a>
-        <span class="project-description">A simple 1.21.10 Hypixel Skyblock Client , coded in rust + KT.</span>
-      </li>
-      <li>
-        <a class="custom-link" href="https://github.com/donskyblock/VtubeStudio" target="_blank">
-          <span class="link-label">Rust VTube Studio</span>
-          <span>&rarr;</span>
-        </a>
-        <span class="project-description">A nice linux compatible, VTUBE studio client, made in rust.</span>
-      </li>
-    </ul>
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" id="progressBar"></div>
   </div>
+
+  <main class="site">
+    <aside class="left-rail">
+      <div class="profile-wrap">
+        <img class="pfp" src="pfp.gif" alt="Donskyblock profile picture">
+        <h1>Donskyblock</h1>
+        <p class="tagline">Freelance dev. Open source when I can.</p>
+        <p class="bio">
+          I build stuff I actually want to use: game-side tools, Linux-friendly apps,
+          and random useful utilities. Mostly Rust/Kotlin/Python, but I jump stacks as needed.
+        </p>
+
+        <ul class="left-links">
+          <li>
+            <a class="link-card" href="https://github.com/donskyblock" target="_blank" rel="noreferrer">
+              <span class="left-label">
+                <img class="icon" src="./github.svg" alt="GitHub icon">
+                GitHub
+              </span>
+              <span class="arrow">-></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" href="https://codeberg.org/donskyblock/" target="_blank" rel="noreferrer">
+              <span class="left-label">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2 3.4 4.9 20h14.2L22 3.4H2Zm2.1 2h15.8l-1.8 10.4a5.4 5.4 0 0 0-4.5-2.3c-2.8 0-4.8 2-5.6 4.6L4.1 5.4Z"></path>
+                </svg>
+                Codeberg
+              </span>
+              <span class="arrow">-></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" href="https://twitch.tv/donsbyt" target="_blank" rel="noreferrer">
+              <span class="left-label">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 3h16v11l-4 4h-3l-2 2H8v-2H4V3Zm2 2v10h4v2l2-2h3l3-3V5H6Zm4 2h2v5h-2V7Zm5 0h2v5h-2V7Z"></path>
+                </svg>
+                Twitch
+              </span>
+              <span class="arrow">-></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" href="https://www.youtube.com/@DonVFXAnime" target="_blank" rel="noreferrer">
+              <span class="left-label">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29.2 29.2 0 0 0 2 12a29.2 29.2 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29.2 29.2 0 0 0 22 12a29.2 29.2 0 0 0-.4-4.8ZM10 15.2V8.8l5.2 3.2L10 15.2Z"></path>
+                </svg>
+                YouTube
+              </span>
+              <span class="arrow">-></span>
+            </a>
+          </li>
+          <li>
+            <a class="link-card" href="mailto:don@donskyblock.xyz">
+              <span class="left-label">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.5l9 5.5 9-5.5V7l-9 5.5L3 7.1Zm0 2.8V17h18V9.8l-9 5.4-9-5.4Z"></path>
+                </svg>
+                Email
+              </span>
+              <span class="arrow">-></span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="left-footer">Built by Don. Dark mode always wins.</div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <article class="section-card reveal">
+        <p class="section-title">About</p>
+        <h2 class="section-heading">I like building useful things.</h2>
+        <p class="section-copy">
+          I do freelance work and open source side projects.
+          Nothing too fancy, just solid tools that run well and do the job.
+        </p>
+        <ul class="stack-list">
+          <li>Freelance Engineering</li>
+          <li>Open Source</li>
+          <li>Automation</li>
+          <li>Linux-first Tooling</li>
+        </ul>
+      </article>
+
+      <article class="section-card reveal">
+        <p class="section-title">Skill Selector</p>
+        <h2 class="section-heading">Languages I work with a lot.</h2>
+        <p class="section-copy">Pick one to see what I usually use it for.</p>
+
+        <div class="skill-selector" id="skillSelector">
+          <button class="skill-chip active" type="button" data-skill="Rust">Rust</button>
+          <button class="skill-chip" type="button" data-skill="Go">Go</button>
+          <button class="skill-chip" type="button" data-skill="TypeScript">TypeScript</button>
+          <button class="skill-chip" type="button" data-skill="Kotlin">Kotlin</button>
+          <button class="skill-chip" type="button" data-skill="Python">Python</button>
+          <button class="skill-chip" type="button" data-skill="JavaScript">JavaScript</button>
+          <button class="skill-chip" type="button" data-skill="Java">Java</button>
+          <button class="skill-chip" type="button" data-skill="C">C</button>
+          <button class="skill-chip" type="button" data-skill="C++">C++</button>
+        </div>
+
+        <div class="skill-panel">
+          <strong id="skillTitle">Rust</strong>
+          <p class="skill-note" id="skillNote">High-performance systems and game tooling with low-level control.</p>
+        </div>
+      </article>
+
+      <article class="section-card reveal">
+        <p class="section-title">Projects</p>
+        <h2 class="section-heading">A few things I am working on.</h2>
+        <div class="project-grid">
+          <div class="project-item">
+            <a href="https://github.com/donskyblock/DawnClient" target="_blank" rel="noreferrer">DawnClient</a>
+            <p class="project-description">1.21.10 Hypixel Skyblock client powered by Rust + Kotlin.</p>
+          </div>
+          <div class="project-item">
+            <a href="https://github.com/donskyblock/VtubeStudio" target="_blank" rel="noreferrer">Rust VTube Studio</a>
+            <p class="project-description">Linux-compatible VTube Studio client built in Rust.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="section-card reveal">
+        <p class="section-title">Now</p>
+        <h2 class="section-heading">Currently building + freelancing.</h2>
+        <p class="section-copy">
+          If you need help on tooling, game-related projects, or backend work, hit me up.
+          I am usually down to collaborate if the project is interesting.
+        </p>
+      </article>
+
+      <div class="site-footer">Donskyblock // building cool stuff on Linux.</div>
+    </section>
+  </main>
+
+  <script>
+    const cards = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+
+    cards.forEach((card, index) => {
+      card.style.transitionDelay = `${index * 60}ms`;
+      observer.observe(card);
+    });
+
+    const progressBar = document.getElementById("progressBar");
+    const setProgress = () => {
+      const doc = document.documentElement;
+      const maxScroll = doc.scrollHeight - window.innerHeight;
+      const ratio = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      progressBar.style.width = `${Math.min(100, Math.max(0, ratio))}%`;
+    };
+    window.addEventListener("scroll", setProgress, { passive: true });
+    setProgress();
+
+    const skillNotes = {
+      Rust: "Main language for performance-heavy tools and app backends.",
+      Go: "Great for quick services, CLIs, and backend helpers.",
+      TypeScript: "What I use when I want frontend and backend to stay sane.",
+      Kotlin: "Used a lot for JVM-side projects and client work.",
+      Python: "Good for scripting, automation, and getting ideas shipped fast.",
+      JavaScript: "Used for web UI work and simple browser-side features.",
+      Java: "Still useful for backend systems and JVM integrations.",
+      C: "For low-level work when I need direct control.",
+      "C++": "For performance-focused native code and heavier systems work."
+    };
+
+    const chips = document.querySelectorAll(".skill-chip");
+    const skillTitle = document.getElementById("skillTitle");
+    const skillNote = document.getElementById("skillNote");
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((node) => node.classList.remove("active"));
+        chip.classList.add("active");
+        const skill = chip.dataset.skill;
+        skillTitle.textContent = skill;
+        skillNote.textContent = skillNotes[skill] || "General development and shipping useful products.";
+      });
+    });
+  </script>
 </body>
 </html>
